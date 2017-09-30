@@ -64,7 +64,7 @@ class App extends Component {
       <div className="App">
         <input ref="myInput"/>
         <button onClick={() => { this.search() }}>Search</button>
-        <RepoList promise={$.getJSON(`https://api.github.com/search/repositories?q=${this.state.search}&sort=stars?access_token=c4af530b3e031146f7e3ff4ce17088666b92db2c`)} />
+        <RepoList promise={$.getJSON(`https://api.github.com/search/repositories?q=${this.state.search}&sort=stars&access_token=c4af530b3e031146f7e3ff4ce17088666b92db2c`)} />
       </div>
     );
   }
@@ -72,7 +72,7 @@ class App extends Component {
   componentDidMount() {
     this.refs.myInput.value = this.state.search
   }
-  
+
   search() {
     this.setState((prevState) => {
       return {
